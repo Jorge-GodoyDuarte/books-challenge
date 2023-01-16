@@ -18,6 +18,10 @@ resave : true,
 saveUninitialized : true,
 saveUninitializedState : true,
 }));
+app.use((req,res,next) => {
+  req.session.userLogin ? res.locals.userLogin = req.session.userLogin : null
+next()
+})
 app.use('/', mainRouter);
 
 
