@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
     },
     title: {
       type: dataTypes.STRING,
@@ -30,7 +30,9 @@ module.exports = (sequelize, dataTypes) => {
       through: 'BooksAuthors',
       foreingKey: 'BookId',
       otherKey: 'AuthorId',
-      timestamps: false
+      timestamps: false,
+      
+      
     });
   };
 
